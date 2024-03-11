@@ -2,7 +2,7 @@ import re, random
 from openpyxl import Workbook
 from openpyxl.styles import PatternFill
 
-test_dir = 'C:\\Users\\laser\\Desktop\\'
+#test_dir = 'C:\\Users\\laser\\Desktop\\'
 testfile = 'py_xls.xlsx'
 
 book = Workbook()
@@ -16,5 +16,6 @@ for row in ws.iter_rows(min_row=1, max_col=5, max_row=5):
         color = str(hex(random.randint(0, 16777215)))[2:]
         cell.value = str(color)
         cell.fill = PatternFill('solid', fgColor=color)
+        cell.font = random.randint(5, 12)
 
 book.save(testfile)
