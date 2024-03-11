@@ -1,4 +1,3 @@
-for i in range(0, 4):
-    print("Hello,world!")
-num = input("some num=")
-print("num=", num)
+import openpyxl as xl, re
+test_dir = 'C:\\Users\\laser\\Desktop\\'
+testfile = 'py_xls.xls'
