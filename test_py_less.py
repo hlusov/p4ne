@@ -5,17 +5,21 @@ from openpyxl.styles import PatternFill
 #test_dir = 'C:\\Users\\laser\\Desktop\\'
 testfile = 'py_xls.xlsx'
 
+def rand():
+    return str(hex(random.randint(0, 16777215)))[2:]
 book = Workbook()
 ws = book.active
-color = str(hex(random.randint(0, 16777215)))[2:]
-print (color)
+#color = str(hex(random.randint(0, 1677721)))[2:]
+color = rand()
+print(color)
 ws.sheet_properties.tabColor = color
 
 for row in ws.iter_rows(min_row=1, max_col=5, max_row=5):
     for cell in row:
-        color = str(hex(random.randint(0, 16777215)))[2:]
-        cell.value = str(color)
-        cell.fill = PatternFill('solid', fgColor=color)
+#        color = str(hex(random.randint(0, 1677721)))[2:]
+        cell.value = rand()
+        cell.fill = PatternFill('solid', fgColor=rand())
         cell.font = random.randint(5, 12)
+        print(color)
 
 book.save(testfile)
