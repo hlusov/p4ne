@@ -1,25 +1,24 @@
 import re, random
 from openpyxl import Workbook
-from openpyxl.styles import PatternFill
+from openpyxl.styles import PatternFill, Font
 
 #test_dir = 'C:\\Users\\laser\\Desktop\\'
 testfile = 'py_xls.xlsx'
 
 def rand():
-    return str(hex(random.randint(0, 16777215)))[2:]
+    return "ff" + str(hex(random.randint(0, 2**24))[2:])
 book = Workbook()
 ws = book.active
-#color = str(hex(random.randint(0, 1677721)))[2:]
 color = rand()
 print(color)
 ws.sheet_properties.tabColor = color
 
 for row in ws.iter_rows(min_row=1, max_col=5, max_row=5):
     for cell in row:
-#        color = str(hex(random.randint(0, 1677721)))[2:]
         cell.value = rand()
-        cell.fill = PatternFill('solid', fgColor=rand())
-        cell.font = random.randint(5, 12)
-        print(color)
+        print(cell.value)
+        cell.fill = PatternFill('solid', fgColor=cell.value)
+        ws[row, cell].font = Font(color=random.randint(2, 10))
 
 book.save(testfile)
+
