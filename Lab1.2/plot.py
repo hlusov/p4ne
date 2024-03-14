@@ -25,9 +25,9 @@ pyplot.legend(loc='upper left')
 wb = Workbook()
 ws = wb.active
 
-#for i in range(len(years)):
+for i in range(len(years)):
 #    print(years[i])
-#    ws['A'][i+1] = years[i]
-print(ws.title)
+    ws['A+str(i+1)'] = years[i]
+#ws.append(years)
 wb.save(file)
 
