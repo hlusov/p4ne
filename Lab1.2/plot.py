@@ -1,5 +1,5 @@
 from matplotlib import pyplot
-from openpyxl import workbook, load_workbook
+from openpyxl import Workbook, load_workbook
 import urllib.request as url
 
 file = 'plot.xlsx'
@@ -20,12 +20,14 @@ pyplot.xlabel('Годы')
 pyplot.ylabel('Температура/Активность Солнца')
 pyplot.legend(loc='upper left')
 
-pyplot.show()
+#pyplot.show()
 
-#wb = workbook()
-#ws = wb.active
+wb = Workbook()
+ws = wb.active
 
-#ws[row=1, column=1].value = 1
-
-#wb.save(file)
+#for i in range(len(years)):
+#    print(years[i])
+#    ws['A'][i+1] = years[i]
+print(ws.title)
+wb.save(file)
 
