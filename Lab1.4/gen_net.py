@@ -27,7 +27,7 @@ wb = Workbook()
 ws = wb.active
 
 plot.plot (range(n),graf)
-plot.show()
+# plot.show()
 # ws.append(list_net)
 #for i in len(list_net):
 #    ws[]
