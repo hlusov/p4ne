@@ -19,8 +19,8 @@ for k in range (n):
             i += 1
     graf.append(k)
 
-
 list1 = sorted(list_net)
+list2 = list(map(str, list1))
 print(k, i, list_net)
 print (graf)
 wb = Workbook()
@@ -28,7 +28,7 @@ ws = wb.active
 
 plot.plot (range(n),graf)
 # plot.show()
-# ws.append(list_net)
+ws.append(list2)
 #for i in len(list_net):
 #    ws[]
 
